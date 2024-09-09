@@ -1,0 +1,42 @@
+{
+    "name": "react-java-devel",
+    "privileged": true,
+    "remoteUser": "node",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "installGradle": "true",
+            "installMaven": "true"
+        }
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "containerEnv": {
+        "TZ": "Asia/Jakarta"
+    },
+    "mounts": [
+        "source=/home/didi/Android/Sdk,target=/home/node/Android/sdk,type=bind"
+    ],
+    "runArgs": [
+        "--shm-size=4g",
+        "--network=host",
+        "--device=/dev/bus/usb"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-typescript-next",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "bradlc.vscode-tailwindcss",
+                "expo.vscode-expo-tools",
+                "msjsdiag.vscode-react-native",
+                "eamodio.gitlens",
+                "redhat.vscode-yaml",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y adb && sudo usermod -aG plugdev node"
+}

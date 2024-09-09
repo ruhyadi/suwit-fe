@@ -1,0 +1,29 @@
+{
+    "name": "react-node-devel",
+    "privileged": true,
+    "remoteUser": "node",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "containerEnv": {
+        "TZ": "Asia/Jakarta"
+    },
+    "runArgs": [
+        "--shm-size=4g"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-typescript-next",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "bradlc.vscode-tailwindcss",
+                "expo.vscode-expo-tools",
+                "msjsdiag.vscode-react-native",
+                "eamodio.gitlens",
+                "redhat.vscode-yaml",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    }
+}
